@@ -10,6 +10,22 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			function secondHighest(arr) {
+    // Check if array has less than 2 unique elements
+    if (new Set(arr).size < 2) {
+        return -Infinity;
+    }
+
+    // Sort the array in descending order
+    arr.sort((a, b) => b - a);
+
+    // Find the second unique number
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] !== arr[0]) {
+            return arr[i];
+        }
+    }
+}
 			
 		}
 
