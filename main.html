@@ -10,32 +10,6 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			 let firstMax = -Infinity;
-
-    // Find the maximum element in the array
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > firstMax) {
-            firstMax = arr[i];
-        }
-    }
-
-    let secondLargest = -Infinity;
-
-    // Find the second largest element in the array
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === firstMax) {
-            continue;
-        }
-        if (arr[i] > secondLargest) {
-            secondLargest = arr[i];
-        }
-    }
-
-    if (secondLargest !== -Infinity) {
-        console.log(secondLargest);
-    } else {
-        console.log("There is no second largest element.");
-    }
 			
 		}
 
