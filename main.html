@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>	
-	<script
-			function secondHighest(arr) {
-    // Check if array has less than 2 unique elements
-    if (new Set(arr).size < 2) {
-        return -Infinity;
-    }
+<body>
+    <script>
+        function secondHighest(arr) {
+            // Convert array elements to numbers
+            arr = arr.map(Number);
 
-    // Sort the array in descending order
-    arr.sort((a, b) => b - a);
+            // Check if array has less than 2 unique elements
+            if (new Set(arr).size < 2) {
+                return -Infinity;
+            }
 
-    // Find the second unique number
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] !== arr[0]) {
-            return arr[i];
+            // Sort the array in descending order
+            arr.sort((a, b) => b - a);
+
+            // Find the second unique number
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] !== arr[0]) {
+                    return arr[i];
+                }
+            }
         }
-    }
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
-	</script>
+        function Main() {
+            var n = prompt("Enter the number of elements");
+            n = parseInt(n); // Convert the input to a number
+            if (isNaN(n) || n <= 0) {
+                alert("Invalid number of elements.");
+                return;
+            }
+            
+            var arr = [];
+            for (var i = 0; i < n; i++) {
+                arr[i] = prompt("Enter element " + (i + 1));
+            }
+            
+            alert(secondHighest(arr));
+        }
 
-    <script type="text/javascript" src="./script.js">
-</script>
+        Main();
+    </script>
 
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
